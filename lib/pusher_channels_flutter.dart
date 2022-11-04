@@ -90,6 +90,7 @@ class PusherChannelsFlutter {
     required String apiKey,
     required String cluster,
     bool? useTLS,
+    String? host,
     int? activityTimeout,
     int? pongTimeout,
     int? maxReconnectionAttempts,
@@ -128,6 +129,7 @@ class PusherChannelsFlutter {
     this.onAuthorizer = onAuthorizer;
     this.onSubscriptionCount = onSubscriptionCount;
     await methodChannel.invokeMethod('init', {
+      "host": host,
       "apiKey": apiKey,
       "cluster": cluster,
       "useTLS": useTLS,
