@@ -101,7 +101,7 @@ class PusherChannelsFlutterPlugin : FlutterPlugin, MethodCallHandler, ActivityAw
                 pusher!!.disconnect()
             }
             val options = PusherOptions()
-            if (call.argument<String>("host") != null) options.setCluster(call.argument("host"))
+            if (call.argument<String>("host") != null) options.setHost(call.argument("host"))
             if (call.argument<String>("cluster") != null) options.setCluster(call.argument("cluster"))
             if (call.argument<Boolean>("useTLS") != null) options.isUseTLS =
                 call.argument("useTLS")!!
